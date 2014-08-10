@@ -31,7 +31,6 @@ $(document).ready(function(){
 	//Buscar imagenes con dpi variable y reemplaza el folder por el adecuado.
 	$.post("http://banderablanca.org.ar/GetNews",{},function(exito){
 		if(exito){
-			alert(exito);
 			$("loader").hide();
 			if(exito.newsType=="found"){
 				$("#foto").css("background-color","transparent");
@@ -43,5 +42,5 @@ $(document).ready(function(){
 			$("#desc").html(exito.newsDescription);
 			$("#busqueda").show();
 		}
-	})
+	},"json")
 })
