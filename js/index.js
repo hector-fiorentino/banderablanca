@@ -31,15 +31,16 @@ $(document).ready(function(){
 	//Buscar imagenes con dpi variable y reemplaza el folder por el adecuado.
 	$.post("http://banderablanca.org.ar/GetNews",{},function(exito){
 		if(exito){
-			$("loader").hide();
 			if(exito.newsType=="found"){
 				$("#foto").css("background-color","transparent");
 				$("#foto").attr("src","assets/imagenes/"+folder+"/banderaverde.png");
+				$("#desc").hide();
 			}else{
 				$("#foto").attr("src",exito.newsPictureURI);
+				$("#desc").html(exito.newsDescription);
 			}
-			$("#titulo").html(exito.newsTitle);
-			$("#desc").html(exito.newsDescription);
+			$("#titular").html(exito.newsTitle);
+			$("loader").hide();
 			$("#busqueda").show();
 		}
 	},"json")
