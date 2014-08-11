@@ -56,9 +56,9 @@ $(document).ready(function(){
 	})
 })
 function guardarPush(){
-	$.post("http://banderablanca.org.ar/SubscribeDroid",{channel:channelUri},function(exito){
+	$.get("http://banderablanca.org.ar/SubscribeDroid",{channel:channelUri},function(exito){
 		if(exito){
-			alert("OK");
+			alert(exito);
 		}
 	})
 }
