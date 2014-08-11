@@ -80,10 +80,10 @@
             // Your GCM push server needs to know the regID before it can push to this device
             // here is where you might want to send it the regID for later use.
             // alert("regID = " + e.regid);
-            channelUri = e.regid;
-            alert(channelUri);
-            console.log = channelUri;
-            $.post("http://banderablanca.org.ar/SubscribeDroid",{channel:channelUri},function(exito){
+            //channelUri = e.regid;
+            //alert(channelUri);
+            //console.log = channelUri;
+            $.post("http://banderablanca.org.ar/SubscribeDroid",{channel:e.regid},function(exito){
               if(exito){
                 alert(exito);
               }
@@ -126,14 +126,14 @@
             }
             
             function tokenHandler (result) {
-              alert("ERROR1");
+              //alert("ERROR1");
                 //$("#app-status-ul").append('<li>token: '+ result +'</li>');
                 // Your iOS push server needs to know the token before it can push to this device
                 // here is where you might want to send it the token for later use.
             }
       
             function successHandler (result) {
-              alert("ERROR2");
+              //alert("ERROR2");
                 //$("#app-status-ul").append('<li>success:'+ result +'</li>');
             }
             
