@@ -51,6 +51,7 @@ $(document).ready(function(){
 	},"json")
 
 	$(".share").click(function(){
+		alert(txt + " " + imagen);
 		window.plugins.socialsharing.share(txt, null, imagen, 'http://banderablanca.org.ar')
 	})
 })
