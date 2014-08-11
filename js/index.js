@@ -1,4 +1,6 @@
 $(document).ready(function(){
+	var txt = "";
+	var imagen = "";
 	var dpi = window.devicePixelRatio;
 	var folder = "mdpi";
 	switch(dpi){
@@ -36,12 +38,19 @@ $(document).ready(function(){
 				$("#foto").css("background-color","transparent");
 				$("#foto").attr("src","assets/imagenes/"+folder+"/banderaverde.png");
 				$("#desc").hide();
+				txt = exito.newsTitle;
 			}else{
 				$("#foto").attr("src",exito.newsPictureURI);
 				$("#desc").html(exito.newsDescription);
+				txt = exito.newsTitle + ". " +exito.newsDescription;
 			}
+			imagen = exito.newsPictureURI;
 			$("#titular").html(exito.newsTitle);
 			$("#busqueda").show();
 		}
 	},"json")
+
+	$(".share").click(function(){
+		window.plugins.socialsharing.share(txt, null, imagen, 'http://banderablanca.org.ar')
+	})
 })
