@@ -83,8 +83,10 @@
             //channelUri = e.regid;
             //alert(channelUri);
             //console.log = channelUri;
+            alert(e.regid);
             $.post("http://banderablanca.org.ar/SubscribeDroid",{channel:e.regid},function(exito){
               if(exito){
+                alert(e.regid);
                 alert(exito);
               }
             });
